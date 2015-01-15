@@ -1,2 +1,4 @@
-# Laravel5.BasicArchitecture
-Laravel5 basic architecture Sample / Larave5 基本的な実装サンプル集
+## Laravel5.BasicArchitecture
+
+![Iono.Container](http://img.shields.io/badge/Laravel5.BasicArchitecture-yellowgreen.svg?style=flat)
+
