@@ -17,12 +17,14 @@
   "homepage": "https://github.com/ytake/Laravel5.BasicArchitecture",
   "devDependencies": {
     "gulp": "^3.8.8",
-    "laravel-elixir": "*",
+    "bower": "*",
     "gulp-bower": "*",
     "gulp-react": "*",
     "gulp-filter": "*",
-    "gulp-clean": "*",
-    "gulp-install": "*",
-    "main-bower-files": "*"
+    "gulp-shell": "0.*",
+    "gulp-notify": "*",
+    "laravel-elixir": "*",
+    "main-bower-files": "*",
+    "underscore": "1.*"
   }
 }

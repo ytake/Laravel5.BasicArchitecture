@@ -9,8 +9,8 @@
         "tests"
     ],
     "dependencies": {
-        "bootstrap": "*",
-        "bootstrap-material-design": "*",
+        "jquery":"*",
+        "foundation": "*",
         "react": "0.*"
     },
     "exportsOverride": {
