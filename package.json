@@ -25,6 +25,11 @@
     "gulp-notify": "*",
     "laravel-elixir": "*",
     "main-bower-files": "*",
-    "underscore": "1.*"
+    "underscore": "1.*",
+    "gulp-plumber": "*",
+    "gulp-minify-css": "*",
+    "gulp-css-url-adjuster": "*",
+    "browser-sync": "*",
+    "gulp-uglify": "*"
   }
 }

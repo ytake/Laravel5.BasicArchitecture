@@ -1,43 +1,37 @@
 {
-    "name": "tutorial-laravel5",
-    "version": "0.0.1",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "jquery":"*",
-        "foundation": "*",
-        "react": "0.*"
+  "name": "tutorial-laravel5",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "*",
+    "bootstrap-material-design": "*",
+    "react": "0.*"
+  },
+  "exportsOverride": {
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": "**/*.min.css"
     },
-    "exportsOverride": {
+    "jquery": {
+      "main": "**/*.min.js"
     },
-    "overrides": {
-        "bootstrap": {
-            "main": "**/*.min.css"
-        },
-        "jquery": {
-            "main": "**/*.min.js"
-        },
-        "bootstrap-material-design": {
-            "main": [
-                "**/*.min.js",
-                "**/*.min.css"
-            ]
-        },
-        "react": {
-            "main": {
-                "development": [
-                    "**/*.js",
-                    "JSXTransformer.js"
-                ],
-                "production": [
-                    "**/*.min.js"
-                ]
-            }
-        }
+    "bootstrap-material-design": {
+      "main": [
+        "**/*.min.js",
+        "**/*.min.css"
+      ]
+    },
+    "react": {
+      "main": [
+        "**/*.min.js"
+      ]
     }
+  }
 }

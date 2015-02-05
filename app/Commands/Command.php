@@ -1,7 +1,13 @@
-<?php namespace App\Commands;
+<?php
+namespace App\Commands;
 
-abstract class Command {
+/**
+ * Class Command
+ * @package App\Commands
+ */
+abstract class Command
+{
 
-	//
+    //
 
 }

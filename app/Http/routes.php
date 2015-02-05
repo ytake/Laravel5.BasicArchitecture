@@ -1,21 +1,24 @@
 <?php
+/** @var \Illuminate\Routing\Router $router */
+$router->get('', ['uses' => "HomeController@index", 'as' => 'index']);
+$router->get("todo", ['uses' => "ToDoController@index", 'as' => 'todo.front.index']);
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-Route::get('/', 'WelcomeController@index');
-
-Route::get('home', 'HomeController@index');
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+$router->group(['prefix' => 'api/v1', "namespace" => "Api"], function ($router) {
+    $router->resource("token", "TokenController", [
+        'names' => [
+            'index' => 'token.index'
+        ],
+        "only" => [
+            "index"
+        ]
+    ]);
+    $router->resource("todo", "ToDoController", [
+        "names" => [
+            "index" => "todo.index",
+            "store" => "todo.store"
+        ],
+        "only" => [
+            "index", "store"
+        ]
+    ]);
+});
