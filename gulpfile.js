@@ -75,6 +75,7 @@ elixir.extend('reactPreCompile', function () {
             .pipe(uglify())
             .pipe(gulp.dest('public/js'));
     });
+    this.registerWatcher('react', 'resources/js/react/**/*.jsx');
     return this.queueTask("react");
 });
 

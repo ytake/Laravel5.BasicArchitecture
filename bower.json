@@ -11,7 +11,8 @@
   "dependencies": {
     "bootstrap": "*",
     "bootstrap-material-design": "*",
-    "react": "0.*"
+    "react": "0.*",
+    "highlightjs" : "*"
   },
   "exportsOverride": {
   },
@@ -31,6 +32,12 @@
     "react": {
       "main": [
         "**/*.min.js"
+      ]
+    },
+    "highlightjs": {
+      "main": [
+        "**/*.pack.js",
+        "**/github.css"
       ]
     }
   }

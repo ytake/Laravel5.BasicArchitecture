@@ -9,12 +9,13 @@
     <meta name="author" content="Yuuki Takezawa, @ytake">
     <meta name="description" content="@yield('description', null)">
     <meta name="keywords" content="@yield('keywords', null)" />
+    @yield('meta')
     <title>@yield('title', null)</title>
     <link rel="shortcut icon" href="/icon/favicon.png" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="/icon/favicon.png">
-    <link href="{{asset("/assets/css/bootstrap.min.css")}}" rel="stylesheet">
-    <link href="{{asset("/assets/css/ripples.min.css")}}" rel="stylesheet">
-    <link href="{{asset("/assets/css/material-wfont.min.css")}}" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/ripples.min.css" rel="stylesheet">
+    <link href="/assets/css/material-wfont.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     @yield('styles')
 </head>
@@ -24,8 +25,8 @@
         @yield('content')
     </div>
     @include('elements.footer')
-    <script src="{{asset("/assets/js/react.min.js")}}"></script>
-    <script src="{{asset("/assets/js/react-with-addons.min.js")}}"></script>
+    <script src="/assets/js/react.min.js"></script>
+    <script src="/assets/js/react-with-addons.min.js"></script>
     @yield('scripts')
 </body>
 </html>

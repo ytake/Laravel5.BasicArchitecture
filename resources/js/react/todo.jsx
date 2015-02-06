@@ -49,20 +49,8 @@ var TodoApp = React.createClass({
             }.bind(this)
         });
     },
-    getRequestToken: function() {
-        $.get(this.props.tokenUri,
-            function(result) {
-                if (this.isMounted()) {
-                    this.setState({
-                        token: result.token
-                    });
-                }
-            }.bind(this)
-        );
-    },
     componentDidMount: function() {
         this.loadTodoTasks();
-        this.getRequestToken();
     },
     handleSubmit: function(e) {
         e.preventDefault();
@@ -70,8 +58,11 @@ var TodoApp = React.createClass({
             url: this.props.callUri,
             dataType: 'json',
             type: 'POST',
+            headers: {
+                'X-XSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            },
             data: {
-                _token: this.state.token,
+                // _token: this.state.token,
                 title: this.state.title
             },
             success: function(data) {
@@ -112,6 +103,6 @@ var TodoApp = React.createClass({
 });
 
 React.renderComponent(
-    <TodoApp callUri="/api/v1/todo" tokenUri="/api/v1/token" />,
+    <TodoApp callUri="/api/v1/todo" />,
     document.getElementById("todo")
 );
