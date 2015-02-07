@@ -1,5 +1,13 @@
 tools:
   external_code_coverage: false
+build:
+  tests:
+    override:
+      -
+        command: 'phpunit --coverage-clover=build/logs/clover.xml'
+          coverage:
+            file: 'build/logs/clover.xml'
+            format: 'php-clover'
 checks:
   php:
     code_rating: true
