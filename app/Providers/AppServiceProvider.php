@@ -1,7 +1,6 @@
 <?php
 namespace App\Providers;
 
-use App\Blade\ExtensionCompiler;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -19,9 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->events->listen('creating:*', function () {
-            (new ExtensionCompiler())->registerExtensions();
-        });
+
     }
 
     /**

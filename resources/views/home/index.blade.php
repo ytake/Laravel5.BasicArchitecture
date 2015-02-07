@@ -3,9 +3,9 @@
     <ul>
         <li>
             <p class="lead">
-                <a href="{{route('todo.front.index')}}">ToDo Application</a>
+                <a href="{{route('todo.front.index')}}">Single Page Application</a>
                 <br />
-                basic json response
+                basic json response / laravel-elixir
             </p>
         </li>
     </ul>

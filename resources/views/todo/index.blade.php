@@ -11,6 +11,7 @@
         <div class="col-lg-6">
             <div class="well bs-component">
                 <fieldset>
+                    <h2>gulp sample</h2>
                     <pre>
                         <code class="js">
 // bower install
@@ -55,11 +56,11 @@ elixir.extend('reactPreCompile', function () {
     <script>hljs.initHighlightingOnLoad();</script>
 @stop
 @section('title')
-    ToDo Application with React.js
+    Single Page Application with React.js
 @stop
 @section('styles')
     <link href="/assets/css/github.css" rel="stylesheet">
 @stop
 @section('meta')
-    <meta name="_token" content="@xsrf_token"/>
+    <meta name="_token" content="{!!$token!!}"/>
 @stop

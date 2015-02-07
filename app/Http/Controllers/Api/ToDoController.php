@@ -10,8 +10,6 @@ use App\Repositories\TodoRepositoryInterface;
  * Class ToDoController
  * @package App\Http\Controllers
  * @author yuuki.takezawa<yuuki.takezawa@comnect.jp.net>
- * @Resource("todo",only={"index", "store"},names={"index": "todo.index", "store": "todo.store"})
- * @Controller(prefix="api/v1")
  */
 class ToDoController extends Controller
 {
