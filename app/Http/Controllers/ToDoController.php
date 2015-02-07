@@ -14,7 +14,7 @@ class ToDoController extends Controller
      */
     public function index()
     {
-        $encrypt = app("Illuminate\Contracts\Encryption\Encrypter");
-        return view('todo.index')->with('token', $encrypt->encrypt(csrf_token()));
+        return view('todo.index');
     }
+
 }

@@ -50,8 +50,6 @@ elixir.extend('reactPreCompile', function () {
     use laravel-elixir (gulp)
 @stop
 @section('scripts')
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/highlight.pack.js"></script>
     <script src="/js/todo.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 @stop
@@ -62,5 +60,5 @@ elixir.extend('reactPreCompile', function () {
     <link href="/assets/css/github.css" rel="stylesheet">
 @stop
 @section('meta')
-    <meta name="_token" content="{!!$token!!}"/>
+    <meta name="_token" content="{!!$xsrf_token!!}"/>
 @stop

@@ -36,6 +36,10 @@ return [
 			'driver' => 'array'
 		],
 
+		'voltdb' => [
+			'driver' => 'voltdb'
+		],
+
 		'database' => [
 			'driver' => 'database',
 			'table'  => 'cache',

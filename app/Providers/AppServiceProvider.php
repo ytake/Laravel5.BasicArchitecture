@@ -40,6 +40,16 @@ class AppServiceProvider extends ServiceProvider
             ->needs("App\Repositories\ToDoRepositoryInterface")
             ->give("App\Repositories\ToDoRepository");
         //
+        $this->app->bind(
+            "App\Repositories\MarkdownRepositoryInterface",
+            "App\Repositories\MarkdownRepository"
+        );
+        // field injection
+        $this->app->resolving("App\Repositories\MarkdownRepositoryInterface", function ($app) {
+            $app->path = config('sample.markdown');
+        });
+        // view compose
+        $this->app->view->composer(['markdown.index', 'todo.index'], "App\Renders\XsrfTokenComposer");
     }
 
 }

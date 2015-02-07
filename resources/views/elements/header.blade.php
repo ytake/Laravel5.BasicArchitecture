@@ -12,8 +12,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li @if(Request::path() === '/')class="active" @endif><a href="{{URL::route('index')}}">Home</a></li>
-                <li @if(Request::path() === 'todo')class="active" @endif><a href="{{URL::route('todo.front.index')}}">Single Page Application</a></li>
+                <li @if(Request::path() === '/')class="active" @endif><a href="{{route('index')}}">Home</a></li>
+                <li @if(Request::path() === 'todo')class="active" @endif><a href="{{route('todo.front.index')}}">Single Page Application</a></li>
+                <li @if(Request::path() === 'markdown')class="active" @endif><a href="{{route('markdown.index')}}">RealTime Markdown Editor</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

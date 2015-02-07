@@ -1,4 +1,5 @@
-<?php namespace App\Exceptions;
+<?php
+namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -24,7 +25,7 @@ class Handler extends ExceptionHandler {
 	 */
 	public function report(Exception $e)
 	{
-		return parent::report($e);
+		parent::report($e);
 	}
 
 	/**
@@ -40,10 +41,7 @@ class Handler extends ExceptionHandler {
 		{
 			return $this->renderHttpException($e);
 		}
-		else
-		{
-			return parent::render($request, $e);
-		}
+		return parent::render($request, $e);
 	}
 
 }

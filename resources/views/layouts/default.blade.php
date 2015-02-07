@@ -14,8 +14,8 @@
     <link rel="shortcut icon" href="/icon/favicon.png" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="/icon/favicon.png">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/ripples.min.css" rel="stylesheet">
     <link href="/assets/css/material-wfont.min.css" rel="stylesheet">
+    <link href="/assets/css/ripples.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     @yield('styles')
 </head>
@@ -25,6 +25,12 @@
         @yield('content')
     </div>
     @include('elements.footer')
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/highlight.pack.js"></script>
+    <script src="/assets/js/material.min.js"></script>
+    <script src="/assets/js/ripples.min.js"></script>
+    <script>$.material.init();</script>
     <script src="/assets/js/react.min.js"></script>
     <script src="/assets/js/react-with-addons.min.js"></script>
     @yield('scripts')

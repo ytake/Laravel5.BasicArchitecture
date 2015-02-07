@@ -40,10 +40,9 @@ class ToDoController extends Controller
      */
     public function store(ToDoRequest $request, Dispatcher $dispatcher)
     {
-        $this->todo->store(
-            $request->get("title")
-        );
+        $this->todo->store($request->get("title"));
         $dispatcher->fire('todo.add');
         return response($this->todo->all());
     }
+
 }

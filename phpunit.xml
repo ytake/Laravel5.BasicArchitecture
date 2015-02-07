@@ -11,7 +11,7 @@
          syntaxCheck="false">
     <testsuites>
         <testsuite name="Application Test Suite">
-            <directory>./tests/</directory>
+            <directory suffix="Test.php">./tests/</directory>
         </testsuite>
     </testsuites>
     <filter>
@@ -19,15 +19,23 @@
             <directory>./app</directory>
             <exclude>
                 <directory>./app/Providers</directory>
+                <directory suffix="Interface.php">./app</directory>
+                <file>./app/Http/Requests/Request.php</file>
+                <file>./app/Http/Kernel.php</file>
+                <file>./app/Http/Middleware/RedirectIfAuthenticated.php</file>
+                <file>./app/Http/Middleware/Authenticate.php</file>
+                <file>./app/Http/Controllers/Controller.php</file>
+                <file>./app/Commands/Command.php</file>
+                <file>./app/Events/Event.php</file>
             </exclude>
         </whitelist>
     </filter>
-    <logging>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
-    </logging>
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
     </php>
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
 </phpunit>

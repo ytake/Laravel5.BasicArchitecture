@@ -62,7 +62,6 @@ var TodoApp = React.createClass({
                 'X-XSRF-TOKEN': $('meta[name="_token"]').attr('content')
             },
             data: {
-                // _token: this.state.token,
                 title: this.state.title
             },
             success: function(data) {
@@ -91,7 +90,6 @@ var TodoApp = React.createClass({
                 <TodoList items={this.state.items} />
                 {this.state.error ? <ToDoErrors items={this.state.error} /> : null }
                 <form onSubmit={this.handleSubmit}>
-                    <input type="hidden" value={this.state.token} />
                     <div className="form-control-wrapper">
                         <input onChange={this.onChange} value={this.state.title} className="form-control empty" />
                     </div>

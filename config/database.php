@@ -83,7 +83,13 @@ return [
 			'password' => env('DB_PASSWORD', ''),
 			'prefix'   => '',
 		],
-
+		'voltdb' => [
+			'driver' => 'voltdb',
+			'host' => 'localhost',
+			'username' => '',
+			'password' => '',
+			'port' => 21212
+		],
 	],
 
 	/*

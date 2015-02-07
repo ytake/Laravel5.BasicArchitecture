@@ -12,13 +12,23 @@
     "bootstrap": "*",
     "bootstrap-material-design": "*",
     "react": "0.*",
-    "highlightjs" : "*"
+    "highlightjs" : "*",
+    "showdown": "*"
   },
   "exportsOverride": {
   },
   "overrides": {
+    "showdown": {
+      "main": [
+        "**/*.min.js"
+      ]
+    },
     "bootstrap": {
-      "main": "**/*.min.css"
+      "main": [
+        "**/*.min.css",
+        "**/*.min.js",
+        "**/glyphicons-*"
+      ]
     },
     "jquery": {
       "main": "**/*.min.js"
@@ -26,7 +36,8 @@
     "bootstrap-material-design": {
       "main": [
         "**/*.min.js",
-        "**/*.min.css"
+        "**/*.min.css",
+        "**/Material-*"
       ]
     },
     "react": {
