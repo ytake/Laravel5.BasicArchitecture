@@ -23,3 +23,6 @@
         </div>
     </div>
 @stop
+@section('title')
+    Simple Form Confirm
+@stop

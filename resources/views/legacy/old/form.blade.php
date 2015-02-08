@@ -49,3 +49,6 @@
 @section('styles')
     <link href="/assets/css/github.css" rel="stylesheet">
 @stop
+@section('title')
+    Simple Form
+@stop

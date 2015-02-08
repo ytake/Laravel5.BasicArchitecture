@@ -19,3 +19,6 @@
 @section('meta')
     <meta name="_token" content="{!!$xsrf_token!!}"/>
 @stop
+@section('title')
+    Reqltime Markdown Editor
+@stop

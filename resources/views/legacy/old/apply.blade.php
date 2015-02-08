@@ -18,7 +18,7 @@
     <script>hljs.initHighlightingOnLoad();</script>
 @stop
 @section('title')
-    no namespace form Sample
+    Simple Form Apply
 @stop
 @section('styles')
     <link href="/assets/css/github.css" rel="stylesheet">
