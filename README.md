@@ -17,3 +17,6 @@ Session Store / Events / laravel-elixir / React.js
 ### Realtime Markdown Editor
 Filesystem / CommandBus / laravel-elixir / React.js
 
+### Simple Form
+form Request / Legacy Controller & no namespace (by classmap)
+
