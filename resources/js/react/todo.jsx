@@ -3,11 +3,16 @@ var TodoList = React.createClass({
     propTypes: {
         items: React.PropTypes.array
     },
+    createItem: function(itemText) {
+        return <li>
+            {itemText.title}
+            {(itemText.id !== 1 && itemText.id !== 2) ?
+                <a href="#" onClick={this.props.handleDelete.bind(this, itemText)}><i className="mdi-toggle-check-box"></i></a>
+                : null}
+        </li>;
+    },
     render: function() {
-        var createItem = function(itemText) {
-            return <li>{itemText}</li>;
-        };
-        return <ul>{this.props.items.map(createItem)}</ul>;
+        return <ul>{this.props.items.map(this.createItem)}</ul>;
     }
 });
 
@@ -30,41 +35,31 @@ var TodoApp = React.createClass({
         };
     },
     onChange: function(e) {
-        this.setState({title: e.target.value});
+        this.setState({
+            title: e.target.value
+        });
     },
     loadTodoTasks: function() {
-        $.ajax({
-            url: this.props.callUri,
-            dataType: 'json',
-            type: 'GET',
-            success: function(data) {
-                this.setState(
-                    {
-                        items: data
-                    }
-                );
-            }.bind(this),
-            error: function(xhr, status, err) {
-
-            }.bind(this)
-        });
+        this.ajaxRequest('GET', this.props.callUri, []);
     },
     componentDidMount: function() {
         this.loadTodoTasks();
     },
     handleSubmit: function(e) {
         e.preventDefault();
+        this.ajaxRequest("POST", this.props.callUri, {title: this.state.title});
+    },
+
+    ajaxRequest: function(method, url, data) {
         $.ajax({
-            url: this.props.callUri,
+            url: url,
             dataType: 'json',
-            type: 'POST',
+            type: method,
             headers: {
                 'X-XSRF-TOKEN': $('meta[name="_token"]').attr('content')
             },
-            data: {
-                title: this.state.title
-            },
-            success: function(data) {
+            data: data,
+            success: function (data) {
                 this.setState(
                     {
                         items: data,
@@ -73,7 +68,7 @@ var TodoApp = React.createClass({
                     }
                 );
             }.bind(this),
-            error: function(xhr, status, err) {
+            error: function (xhr, status, err) {
                 this.setState(
                     {
                         error: xhr.responseJSON.title,
@@ -83,11 +78,15 @@ var TodoApp = React.createClass({
             }.bind(this)
         });
     },
+    handleDelete: function(itemToDelete, e) {
+        e.preventDefault();
+        this.ajaxRequest("DELETE", this.props.callUri + '/' + itemToDelete.id, []);
+    },
     render: function() {
         return (
             <div>
                 <h3>TODO</h3>
-                <TodoList items={this.state.items} />
+                <TodoList items={this.state.items} handleDelete={this.handleDelete} />
                 {this.state.error ? <ToDoErrors items={this.state.error} /> : null }
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-control-wrapper">

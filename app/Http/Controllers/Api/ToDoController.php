@@ -5,6 +5,7 @@ use App\Http\Requests\ToDoRequest;
 use Illuminate\Routing\Controller;
 use Illuminate\Contracts\Events\Dispatcher;
 use App\Repositories\TodoRepositoryInterface;
+use Illuminate\Support\Collection;
 
 /**
  * Class ToDoController
@@ -45,4 +46,13 @@ class ToDoController extends Controller
         return response($this->todo->all());
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     */
+    public function destroy($id)
+    {
+        $this->todo->remove($id);
+        return response($this->todo->all());
+    }
 }

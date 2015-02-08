@@ -20,7 +20,7 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         'todo.add' => [
             'App\Events\ToDoEvent',
-        ],
+        ]
     ];
 
     /**

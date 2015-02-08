@@ -18,4 +18,11 @@ interface ToDoRepositoryInterface
      * @return array
      */
     public function all();
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function remove($id);
+
 }

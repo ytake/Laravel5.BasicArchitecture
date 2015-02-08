@@ -15,6 +15,7 @@
                 <li @if(Request::path() === '/')class="active" @endif><a href="{{route('index')}}">Home</a></li>
                 <li @if(Request::path() === 'todo')class="active" @endif><a href="{{route('todo.front.index')}}">Single Page Application</a></li>
                 <li @if(Request::path() === 'markdown')class="active" @endif><a href="{{route('markdown.index')}}">RealTime Markdown Editor</a></li>
+                <li @if(Request::path() === 'legacy')class="active" @endif><a href="{{route('legacy.form')}}">Simple Form</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

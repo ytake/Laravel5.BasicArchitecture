@@ -1,6 +1,8 @@
 <?php
 namespace App\Repositories;
 
+use Illuminate\Support\Collection;
+
 /**
  * Class ToDoRepository
  * @package App\Repositories
@@ -15,9 +17,11 @@ class ToDoRepository implements ToDoRepositoryInterface
     /** @var array  */
     protected $default = [
         [
+            "id" => 1,
             "title" => "hello"
         ],
         [
+            "id" => 2,
             "title" => "Laravel5"
         ]
     ];
@@ -28,7 +32,8 @@ class ToDoRepository implements ToDoRepositoryInterface
      */
     public function store($title)
     {
-        $result = array_merge($this->all(), [["title" => $title]]);
+        $data = $this->all();
+        $result = array_merge($data, [["id" => count($data) + 1, "title" => $title]]);
         \Session::set($this->key, $result);
     }
 
@@ -42,6 +47,22 @@ class ToDoRepository implements ToDoRepositoryInterface
             $result = $this->default;
         }
         return $result;
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function remove($id)
+    {
+        $result = \Session::get($this->key);
+        foreach($result as $row => $value) {
+            if($value['id'] === (int)$id) {
+                unset($result[$row]);
+            }
+        }
+        \Session::set($this->key, $result);
+        return $this->all();
     }
 
 }

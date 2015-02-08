@@ -16,6 +16,12 @@
                 basic json response / command bus
             </p>
         </li>
+        <li>
+            <p class="lead">
+                <a href="{{route('legacy.form')}}">Simple Form</a><br />
+                no namespace / formRequest
+            </p>
+        </li>
     </ul>
     <div class="panel panel-info">
         <div class="panel-heading">
