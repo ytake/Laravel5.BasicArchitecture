@@ -1,8 +1,6 @@
 <?php
 namespace App\Repositories;
 
-use Illuminate\Support\Collection;
-
 /**
  * Class ToDoRepository
  * @package App\Repositories
