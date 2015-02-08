@@ -17,7 +17,6 @@
     <filter>
         <whitelist>
             <directory>./app</directory>
-            <file>./app/Http/Controllers/Old/LegacyController.php</file>
             <exclude>
                 <directory>./app/Providers</directory>
                 <directory suffix="Interface.php">./app</directory>

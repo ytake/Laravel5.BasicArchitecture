@@ -5,7 +5,6 @@ use App\Http\Requests\ToDoRequest;
 use Illuminate\Routing\Controller;
 use Illuminate\Contracts\Events\Dispatcher;
 use App\Repositories\TodoRepositoryInterface;
-use Illuminate\Support\Collection;
 
 /**
  * Class ToDoController
