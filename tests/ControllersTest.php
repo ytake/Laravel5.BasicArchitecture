@@ -183,4 +183,15 @@ class MockCommandBus implements \Illuminate\Contracts\Bus\Dispatcher
         // TODO: Implement dispatchNow() method.
     }
 
+    /**
+     * Set the pipes commands should be piped through before dispatching.
+     *
+     * @param  array $pipes
+     * @return $this
+     */
+    public function pipeThrough(array $pipes)
+    {
+        // TODO: Implement pipeThrough() method.
+    }
+
 }
